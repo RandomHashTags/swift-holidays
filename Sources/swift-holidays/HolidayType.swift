@@ -94,15 +94,18 @@ public enum HolidayType : String, CaseIterable {
         
         var list:[HolidayDate:[String:NearHoliday]] = [HolidayDate:[String:NearHoliday]]()
         let startingEventDate:HolidayDate = HolidayDate(startingDate), endingEventDate:HolidayDate = HolidayDate(endingDate)
-        let countries:[Country]? = self == .countries ? Country.allCases : nil
         let unCountry:Country? = self == .united_nations ? .united_states : celebratingCountry
-        for holiday in holidays {
-            for year in years {
-                if let countries:[Country] = countries {
+        if let countries:[Country] = self == .countries ? Country.allCases : nil {
+            for holiday in holidays {
+                for year in years {
                     for country in countries {
                         insert_near_holidays(country: country, holiday: holiday, starting_date: startingEventDate, ending_date: endingEventDate, year: year, list: &list)
                     }
-                } else {
+                }
+            }
+        } else {
+            for holiday in holidays {
+                for year in years {
                     insert_near_holidays(country: unCountry, holiday: holiday, starting_date: startingEventDate, ending_date: endingEventDate, year: year, list: &list)
                 }
             }
