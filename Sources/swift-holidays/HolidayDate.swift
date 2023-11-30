@@ -7,7 +7,18 @@
 
 import Foundation
 
-public struct HolidayDate : Hashable {
+public struct HolidayDate : Hashable, Comparable {
+    public static func < (lhs: Self, rhs: Self) -> Bool {
+        let left:DateComponents = lhs.components, right:DateComponents = rhs.components
+        guard let leftYear:Int = left.year, let rightYear:Int = right.year,
+              let leftMonth:Int = left.month, let rightMonth:Int = right.month,
+              let leftDay:Int = left.day, let rightDay:Int = right.day
+        else {
+            return false
+        }
+        return leftYear < rightYear || leftYear == rightYear && (leftMonth < rightMonth || leftMonth == rightMonth && leftDay < rightDay)
+    }
+    
     static func get_first(day_of_week: DayOfWeek, month: Month, year: Int) -> HolidayDate? {
         return get(amount: 1, day_of_week: day_of_week, year: year, month: month, day: 1)
     }

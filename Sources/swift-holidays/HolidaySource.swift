@@ -13,7 +13,7 @@ public enum HolidaySourceType : String {
     case united_nations
     case wikipedia
     
-    func getName() -> String {
+    public func getName() -> String {
         switch self {
         case .national_today: return "National Today"
         case .time_and_date: return "Time and Date"
@@ -22,7 +22,7 @@ public enum HolidaySourceType : String {
         }
     }
     
-    func getURL(holiday: String) -> String {
+    public func getURL(holiday: String) -> String {
         switch self {
         case .national_today: return "https://nationaltoday.com/" + holiday.lowercased().replacingOccurrences(of: " ", with: "-") + "/"
         case .time_and_date: return "https://www.timeanddate.com/holidays/fun/" + holiday.lowercased().replacingOccurrences(of: " ", with: "-")

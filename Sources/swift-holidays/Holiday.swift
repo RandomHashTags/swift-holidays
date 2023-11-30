@@ -43,7 +43,7 @@ public extension Holiday {
     var source : HolidaySourceType {
         return .wikipedia
     }
-    private var url : String {
+    var url : String {
         return source.getURL(holiday: name)
     }
     
