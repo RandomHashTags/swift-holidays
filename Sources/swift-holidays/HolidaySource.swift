@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum HolidaySource : String {
+public enum HolidaySourceType : String {
     case national_today
     case time_and_date
     case united_nations

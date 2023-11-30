@@ -182,9 +182,9 @@ enum IndependenceDay : String, CustomHoliday {
         }
     }
     
-    public func get_sources(country: Country) -> EventSources {
-        let category:EventSource = EventSource(name: "Wikipedia: Category:Independence_days", url: "https://en.wikipedia.org/wiki/Category:Independence_days")
-        let list:EventSource = EventSource(name: "Wikipedia: List of national independence days", url: "https://en.wikipedia.org/wiki/List_of_national_independence_days")
-        return EventSources(sources: [category, list])
+    public func get_sources(country: Country) -> HolidaySources {
+        let category:HolidaySource = HolidaySource(name: "Wikipedia: Category:Independence_days", url: "https://en.wikipedia.org/wiki/Category:Independence_days")
+        let list:HolidaySource = HolidaySource(name: "Wikipedia: List of national independence days", url: "https://en.wikipedia.org/wiki/List_of_national_independence_days")
+        return HolidaySources(sources: [category, list])
     }
 }

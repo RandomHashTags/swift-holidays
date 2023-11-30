@@ -128,7 +128,7 @@ enum TeachersDay : String, CustomHoliday {
         }
     }
     
-    public func get_sources(country: Country) -> EventSources {
-        return EventSources(sources: [EventSource(name: "Wikipedia: List of Teacher's Days", url: "https://en.wikipedia.org/wiki/List_of_Teachers'_Days")])
+    public func get_sources(country: Country) -> HolidaySources {
+        return HolidaySources(sources: [HolidaySource(name: "Wikipedia: List of Teacher's Days", url: "https://en.wikipedia.org/wiki/List_of_Teachers'_Days")])
     }
 }

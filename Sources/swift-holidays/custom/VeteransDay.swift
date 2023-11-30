@@ -33,20 +33,20 @@ enum VeteransDay : String, CustomHoliday {
         }
     }
     
-    public func get_sources(country: Country) -> EventSources {
+    public func get_sources(country: Country) -> HolidaySources {
         switch country {
         case .finland:
-            return EventSources(sources: [EventSource(name: "Wikipedia: National Veterans' Day", url: "https://en.wikipedia.org/wiki/National_Veterans%27_Day")])
+            return HolidaySources(sources: [HolidaySource(name: "Wikipedia: National Veterans' Day", url: "https://en.wikipedia.org/wiki/National_Veterans%27_Day")])
         case .netherlands:
-            return EventSources(sources: [EventSource(name: "Wikipedia: Veterans' Day (Netherlands)", url: "https://en.wikipedia.org/wiki/Veterans%27_Day_(Netherlands)")])
+            return HolidaySources(sources: [HolidaySource(name: "Wikipedia: Veterans' Day (Netherlands)", url: "https://en.wikipedia.org/wiki/Veterans%27_Day_(Netherlands)")])
         case .norway:
-            return EventSources(sources: [EventSource(name: "Wikipedia: Veterans Day (Norway)", url: "https://en.wikipedia.org/wiki/Veterans_Day_(Norway)")])
+            return HolidaySources(sources: [HolidaySource(name: "Wikipedia: Veterans Day (Norway)", url: "https://en.wikipedia.org/wiki/Veterans_Day_(Norway)")])
         case .south_korea:
-            return EventSources(sources: [EventSource(name: "Wikipedia: Veterans Day (South Korea)", url: "https://en.wikipedia.org/wiki/Veterans_Day_(South_Korea)")])
+            return HolidaySources(sources: [HolidaySource(name: "Wikipedia: Veterans Day (South Korea)", url: "https://en.wikipedia.org/wiki/Veterans_Day_(South_Korea)")])
         case .sweden:
-            return EventSources(sources: [EventSource(name: "Wikipedia: Veterans Day (Sweden)", url: "https://en.wikipedia.org/wiki/Veterans_Day_(Sweden)")])
+            return HolidaySources(sources: [HolidaySource(name: "Wikipedia: Veterans Day (Sweden)", url: "https://en.wikipedia.org/wiki/Veterans_Day_(Sweden)")])
         case .united_kingdom:
-            return EventSources(sources: [EventSource(name: "Wikipedia: Armed Forces Day (United Kingdom)", url: "https://en.wikipedia.org/wiki/Armed_Forces_Day_(United_Kingdom)")])
+            return HolidaySources(sources: [HolidaySource(name: "Wikipedia: Armed Forces Day (United Kingdom)", url: "https://en.wikipedia.org/wiki/Armed_Forces_Day_(United_Kingdom)")])
         default:
             return default_sources
         }

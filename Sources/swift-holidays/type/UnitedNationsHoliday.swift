@@ -232,23 +232,23 @@ public extension Holidays {
         }
         
         
-        public func get_sources(country: Country) -> EventSources {
+        public func get_sources(country: Country) -> HolidaySources {
             let unitedNations:String = "United Nations: " + name
             switch self {
             case .international_day_of_light:
-                return EventSources(sources: [EventSource(name: "Official Website", url: "https://www.lightday.org")])
+                return HolidaySources(sources: [HolidaySource(name: "Official Website", url: "https://www.lightday.org")])
             case .arabic_language_day:
-                return EventSources(sources: [EventSource(name: unitedNations, url: "https://www.un.org/ar/observances/arabiclanguageday/")])
+                return HolidaySources(sources: [HolidaySource(name: unitedNations, url: "https://www.un.org/ar/observances/arabiclanguageday/")])
             case .chinese_language_day:
-                return EventSources(sources: [EventSource(name: unitedNations, url: "https://www.un.org/zh/observances/chinese-language-day")])
+                return HolidaySources(sources: [HolidaySource(name: unitedNations, url: "https://www.un.org/zh/observances/chinese-language-day")])
             case .english_language_day:
-                return EventSources(sources: [EventSource(name: unitedNations, url: "https://www.un.org/en/observances/english-language-day")])
+                return HolidaySources(sources: [HolidaySource(name: unitedNations, url: "https://www.un.org/en/observances/english-language-day")])
             case .spanish_language_day:
-                return EventSources(sources: [EventSource(name: unitedNations, url: "https://www.un.org/es/observances/spanish-language-day")])
+                return HolidaySources(sources: [HolidaySource(name: unitedNations, url: "https://www.un.org/es/observances/spanish-language-day")])
             case .french_language_day:
-                return EventSources(sources: [EventSource(name: unitedNations, url: "https://www.un.org/fr/observances/french-language-day/")])
+                return HolidaySources(sources: [HolidaySource(name: unitedNations, url: "https://www.un.org/fr/observances/french-language-day/")])
             case .russian_language_day:
-                return EventSources(sources: [EventSource(name: unitedNations, url: "https://www.un.org/ru/observances/russian-language-day")])
+                return HolidaySources(sources: [HolidaySource(name: unitedNations, url: "https://www.un.org/ru/observances/russian-language-day")])
             default:
                 return default_sources
             }

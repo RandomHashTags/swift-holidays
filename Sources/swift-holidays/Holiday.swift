@@ -14,9 +14,9 @@ public protocol Holiday : CaseIterable, RawRepresentable where RawValue == Strin
     var name : String { get }
     var wikipedia_name : String? { get }
     var aliases : Set<String>? { get }
-    func get_sources(country: Country) -> EventSources
-    func get_additional_sources(country: Country) -> EventSources?
-    var source : HolidaySource { get }
+    func get_sources(country: Country) -> HolidaySources
+    func get_additional_sources(country: Country) -> HolidaySources?
+    var source : HolidaySourceType { get }
     func get_proclamation_date(country: Country?) -> HolidayDate?
     func get_date(country: Country?, year: Int) -> HolidayDate?
 }
@@ -28,19 +28,19 @@ public extension Holiday {
         return nil
     }
     
-    var default_sources : EventSources {
-        return EventSources(sources: [EventSource(name: source.getName() + ": " + name, url: url)])
+    var default_sources : HolidaySources {
+        return HolidaySources(sources: [HolidaySource(name: source.getName() + ": " + name, url: url)])
     }
-    func get_additional_sources(country: Country) -> EventSources? {
+    func get_additional_sources(country: Country) -> HolidaySources? {
         return nil
     }
-    func get_sources(country: Country) -> EventSources {
-        var sources:EventSources = default_sources
+    func get_sources(country: Country) -> HolidaySources {
+        var sources:HolidaySources = default_sources
         sources.append(get_additional_sources(country: country))
         return sources
     }
     
-    var source : HolidaySource {
+    var source : HolidaySourceType {
         return .wikipedia
     }
     private var url : String {

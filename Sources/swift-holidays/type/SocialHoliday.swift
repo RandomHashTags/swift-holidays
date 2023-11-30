@@ -167,7 +167,7 @@ public extension Holidays {
             }
         }
         
-        public func get_sources(country: Country) -> EventSources {
+        public func get_sources(country: Country) -> HolidaySources {
             return getHoliday()?.get_sources(country: country) ?? default_sources
         }
         

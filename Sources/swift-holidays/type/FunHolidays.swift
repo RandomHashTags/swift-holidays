@@ -41,7 +41,7 @@ public extension Holidays {
             }
         }
         
-        public var source : HolidaySource {
+        public var source : HolidaySourceType {
             switch self {
             case .book_lovers_day,
                     .darwin_day,
@@ -115,29 +115,29 @@ public extension Holidays {
             }
         }
         
-        public func get_sources(country: Country) -> EventSources {
+        public func get_sources(country: Country) -> HolidaySources {
             let timeAndDate:String = "Time and Date: " + name
             let nationalToday:String = "National Today: " + name
             switch self {
             case .book_lovers_day:
-                return EventSources(sources: [
-                    EventSource(name: "Wikipedia: " + name, url: "https://en.wikipedia.org/wiki/Book_Lovers_Day"),
-                    EventSource(name: timeAndDate, url: "https://www.timeanddate.com/holidays/fun/book-lovers-day")
+                return HolidaySources(sources: [
+                    HolidaySource(name: "Wikipedia: " + name, url: "https://en.wikipedia.org/wiki/Book_Lovers_Day"),
+                    HolidaySource(name: timeAndDate, url: "https://www.timeanddate.com/holidays/fun/book-lovers-day")
                 ])
             case .fibonacci_day:
-                return EventSources(sources: [
-                    EventSource(name: timeAndDate, url: "https://www.timeanddate.com/holidays/fun/fibonacci-day"),
-                    EventSource(name: nationalToday, url: "https://nationaltoday.com/fibonacci-day/")
+                return HolidaySources(sources: [
+                    HolidaySource(name: timeAndDate, url: "https://www.timeanddate.com/holidays/fun/fibonacci-day"),
+                    HolidaySource(name: nationalToday, url: "https://nationaltoday.com/fibonacci-day/")
                 ]
                 )
             case .national_boyfriend_day:
-                return EventSources(sources: [EventSource(name: nationalToday, url: "https://nationaltoday.com/national-boyfriend-day/")])
+                return HolidaySources(sources: [HolidaySource(name: nationalToday, url: "https://nationaltoday.com/national-boyfriend-day/")])
             case .national_girlfriend_day:
-                return EventSources(sources: [EventSource(name: nationalToday, url: "https://nationaltoday.com/national-girlfriend-day/")])
+                return HolidaySources(sources: [HolidaySource(name: nationalToday, url: "https://nationaltoday.com/national-girlfriend-day/")])
             case .world_photography_day:
-                return EventSources(sources: [EventSource(name: "Official Website", url: "https://www.worldphotographyday.com")])
+                return HolidaySources(sources: [HolidaySource(name: "Official Website", url: "https://www.worldphotographyday.com")])
             default:
-                return EventSources(sources: [EventSource(name: "Time and Date: Fun Holidays", url: "https://www.timeanddate.com/holidays/fun/")])
+                return HolidaySources(sources: [HolidaySource(name: "Time and Date: Fun Holidays", url: "https://www.timeanddate.com/holidays/fun/")])
             }
         }
     }

@@ -125,20 +125,20 @@ public extension Holidays {
             }
         }
         
-        public func get_additional_sources(country: Country) -> EventSources? {
+        public func get_additional_sources(country: Country) -> HolidaySources? {
             switch self {
             case .abraham_lincolns_birthday:
-                return EventSources(sources: [
-                    EventSource(name: "Time and Date", url: "https://www.timeanddate.com/holidays/us/lincolns-birthday")
+                return HolidaySources(sources: [
+                    HolidaySource(name: "Time and Date", url: "https://www.timeanddate.com/holidays/us/lincolns-birthday")
                 ])
             case .labor_day:
-                return EventSources(sources: [
-                    EventSource(name: "U.S. Department of Labor", url: "https://www.dol.gov/general/laborday/history"),
-                    EventSource(name: "Time and Date", url: "https://www.timeanddate.com/holidays/us/labor-day")
+                return HolidaySources(sources: [
+                    HolidaySource(name: "U.S. Department of Labor", url: "https://www.dol.gov/general/laborday/history"),
+                    HolidaySource(name: "Time and Date", url: "https://www.timeanddate.com/holidays/us/labor-day")
                 ])
             case .national_freedom_day:
-                return EventSources(sources: [
-                    EventSource(name: "Time and Date", url: "https://www.timeanddate.com/holidays/us/national-freedom-day")
+                return HolidaySources(sources: [
+                    HolidaySource(name: "Time and Date", url: "https://www.timeanddate.com/holidays/us/national-freedom-day")
                 ])
             default:
                 return nil

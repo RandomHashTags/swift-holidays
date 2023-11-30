@@ -126,7 +126,7 @@ public extension Holidays {
             return nil
         }
         
-        public var source : HolidaySource {
+        public var source : HolidaySourceType {
             switch self {
             case .national_puzzle_day,
                     .national_shower_with_a_friend_day:
